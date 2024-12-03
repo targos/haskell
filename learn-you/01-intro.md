@@ -1,6 +1,6 @@
-# Introduction
+# Starting Out
 
-Notes from <https://learnyouahaskell.github.io/starting-out.html>
+Notes from <https://learnyouahaskell.github.io/starting-out.html>.
 
 ## Interactive mode
 
