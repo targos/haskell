@@ -83,3 +83,41 @@ Notes from <https://learnyouahaskell.github.io/modules.html>.
 
 ## `Data.Char` module
 
+* Lots of predicates like `isSpace`, `isLower`, `isAlpha`, ...
+* `generalCategory` returns an enum for the category of a character.
+* `toUpper`, `toLower`, `toTitle` convert a character.
+* `digitToInt`, `intToDigit` to convert from 0 to 15.
+* `ord` and `chr` convert to the Unicode code point.
+
+## `Data.Map` module
+
+* `Map.fromList` takes an association list (list of tuples). Duplicates are discarded
+* Map keys must be orderable (`Ord`)
+* `empty` is the empty map.
+* `insert` inserts a value in a map.
+  * `Map.insert 3 100 Map.empty` -> `fromList [(3,100)]`.
+* `null` checks if map is empty.
+* `size` returns the size of the map.
+  * `Map.size $ Map.fromList [(2,4),(3,3),(4,2),(5,4),(6,4)]` -> `5`.
+* `singleton` takes a key and a value and creates a map that has exactly one mapping.
+* `lookup` returns a Maybe of the value if the key is found.
+  * `Map.lookup "neil" $ Map.fromList [("amelia","555-2938"),("freya","452-2928"),("neil","205-2928")]` -> `"205-2928"`.
+* `member` predicate that returns whether element is in the map.
+* `map` and `filter` work on the values and return a new map.
+* `toList` converts to a list.
+* `keys` and `elems` return lists of keys and values.
+* `fromListWith` allows to merge duplicates instead of discarding.
+* `insertWith` is similar to insert.
+
+## `Data.Set`
+
+* Values are ordered and unique.
+* `fromList` to create a set.
+* `intersection`, `difference`, `union`.
+* `null`, `size`, `member`, `empty`, `singleton`, `insert`, `delete`.
+* `isSubsetOf`, `isProperSubsetOf`. A proper subset has more elements.
+* `map`, `filter`.
+
+## Making our own modules
+
+See [Geometry](./Geometry/) folder.
