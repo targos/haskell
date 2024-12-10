@@ -45,3 +45,30 @@ data Person = Person { firstName :: String
 
 ## Recursive data structures
 
+* A `data` definition can reference itself.
+  * `data List a = Empty | Cons a (List a) deriving (Show, Read, Eq, Ord)` -> Emulate a native list.
+
+## Create our own infix operator
+
+```hs
+infixr 5 :-:  
+data List a = Empty | a :-: (List a) deriving (Show, Read, Eq, Ord)
+```
+
+* Use only special characters.
+* `infixr` or `infixl` for left/right associativity.
+* Number (5) for fixity.
+
+## Custom typeclasses
+
+* Example from the default `Eq` class:
+
+  ```hs
+  class Eq a where  
+    (==) :: a -> a -> Bool  
+    (/=) :: a -> a -> Bool  
+    x == y = not (x /= y)  
+    x /= y = not (x == y)
+  ```
+
+* If you want to see what the instances of a typeclass are, just do `:info YourTypeClass` in GHCI.
