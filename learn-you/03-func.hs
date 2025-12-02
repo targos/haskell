@@ -23,23 +23,23 @@ length' :: (Num b) => [a] -> b
 length' [] = 0
 length' (_:xs) = 1 + length' xs
 
-capital :: String -> String  
-capital "" = "Empty string, whoops!"  
+capital :: String -> String
+capital "" = "Empty string, whoops!"
 capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
 
-densityTell :: (RealFloat a) => a -> String  
-densityTell density  
-    | density < 1.2 = "Wow! You're going for a ride in the sky!"  
-    | density <= 1000.0 = "Have fun swimming, but watch out for sharks!"  
+densityTell :: (RealFloat a) => a -> String
+densityTell density
+    | density < 1.2 = "Wow! You're going for a ride in the sky!"
+    | density <= 1000.0 = "Have fun swimming, but watch out for sharks!"
     | otherwise   = "If it's sink or swim, you're going to sink."
 
-densityTell2 :: (RealFloat a) => a -> a -> String  
-densityTell2 mass volume  
-    | mass / volume < 1.2 = "Wow! You're going for a ride in the sky!"  
-    | mass / volume <= 1000.0 = "Have fun swimming, but watch out for sharks!"  
+densityTell2 :: (RealFloat a) => a -> a -> String
+densityTell2 mass volume
+    | mass / volume < 1.2 = "Wow! You're going for a ride in the sky!"
+    | mass / volume <= 1000.0 = "Have fun swimming, but watch out for sharks!"
     | otherwise   = "If it's sink or swim, you're going to sink."
 
-max' :: (Ord a) => a -> a -> a  
+max' :: (Ord a) => a -> a -> a
 max' a b
     | a > b     = a
     | otherwise = b
@@ -50,22 +50,22 @@ a `myCompare` b
     | a == b    = EQ
     | otherwise = LT
 
-densityTell3 :: (RealFloat a) => a -> a -> String  
-densityTell3 mass volume  
-    | density < air = "Wow! You're going for a ride in the sky!"  
-    | density <= water = "Have fun swimming, but watch out for sharks!"  
-    | otherwise   = "If it's sink or swim, you're going to sink."  
-    where density = mass / volume  
-          air = 1.2  
+densityTell3 :: (RealFloat a) => a -> a -> String
+densityTell3 mass volume
+    | density < air = "Wow! You're going for a ride in the sky!"
+    | density <= water = "Have fun swimming, but watch out for sharks!"
+    | otherwise   = "If it's sink or swim, you're going to sink."
+    where density = mass / volume
+          air = 1.2
           water = 1000.0
 
-initials :: String -> String -> String  
+initials :: String -> String -> String
 initials firstName lastName = [f] ++ ". " ++ [l] ++ "."
     where (f:_) = firstName
           (l:_) = lastName
 
-cylinder :: (RealFloat a) => a -> a -> a  
-cylinder r h = 
-    let sideArea = 2 * pi * r * h  
-        topArea = pi * r ^2  
+cylinder :: (RealFloat a) => a -> a -> a
+cylinder r h =
+    let sideArea = 2 * pi * r * h
+        topArea = pi * r ^2
     in  sideArea + 2 * topArea
